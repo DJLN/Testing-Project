@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modal 3</title>
+	<link rel="stylesheet" type="text/css" href="css/modal3.css">
+</head>
+<body>
+	<div class="container">
+		<button id="btn">Show Modal</button>
+		<div class="popup">
+			<span id="wc">Welcome</span>
+			<span id="close">&times;</span>
+			<p>Mr. DJ Lemmor Nuique</p>
+		</div>
+	</div>
+	<div class="cover"></div>
+	<script src="js/jquery.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#btn').on('click',function(){
+				$('.popup').slideDown('2000ms');
+			});
+			$('#btn').on('click',function(){
+				$('.cover').fadeIn('slow');
+			});
+			$('.popup').on('click',function(event){
+				if ($(event.target).is('#close')) {
+					$('.popup').fadeOut('slow');
+					$('.cover').slideUp('slow');
+				}
+			});
+			$('.cover').on('click',function(){
+				$('.cover').slideUp('slow');
+				$('.popup').fadeOut('slow');
+			});
+		});
+	</script>
+</body>
+</html>
